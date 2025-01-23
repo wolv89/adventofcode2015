@@ -35,17 +35,27 @@ func (d AocDay1) Puzzle2(useSample int) {
 	scanner := bufio.NewScanner(f)
 	scanner.Split(bufio.ScanLines)
 
-	var (
-		line string
-	)
+	// One liner
+	scanner.Scan()
+	line := scanner.Text()
 
-	for scanner.Scan() {
+	var floor, move int
 
-		line = scanner.Text()
+	for ; move < len(line); move++ {
 
-		// Just a template to be copied...
-		fmt.Println(line)
+		if line[move] == '(' {
+			floor++
+		} else {
+			floor--
+		}
+
+		if floor == -1 {
+			break
+		}
 
 	}
+
+	// Moves are 1-indexed apparently
+	fmt.Println(move + 1)
 
 }

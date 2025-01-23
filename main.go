@@ -42,6 +42,9 @@ func validateFlags(lim int) {
 
 }
 
+/*
+ * This whole structure copied from the 2024 edition, ironically...
+ */
 func main() {
 
 	days := []AocDay{
